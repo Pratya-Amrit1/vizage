@@ -167,65 +167,62 @@ const ImageEditor = () => {
   return (
     <div className="max-w-7xl mx-auto space-y-6">
       {/* Action Buttons */}
-      <Card className="p-6 bg-white/10 backdrop-blur-md border-white/20 shadow-2xl animate-fade-in hover:bg-white/15 transition-all duration-300">
+      <Card className="p-6 bg-white/10 backdrop-blur-md border-white/20 shadow-2xl">
         <div className="flex flex-wrap gap-4 justify-center">
           <Button
             onClick={() => fileInputRef.current?.click()}
-            className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg"
           >
-            <Upload className="w-4 h-4 mr-2 animate-bounce" />
+            <Upload className="w-4 h-4 mr-2" />
             Upload Image
           </Button>
           
           <Button
             onClick={() => setShowCamera(true)}
-            className="bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 shadow-lg"
           >
             <Camera className="w-4 h-4 mr-2" />
             Take Photo
           </Button>
 
-          {currentImage && (
-            <>
-              <Button
-                onClick={handleUndo}
-                disabled={currentHistoryIndex <= 0}
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:hover:scale-100"
-              >
-                <Undo className="w-4 h-4 mr-2" />
-                Undo
-              </Button>
+          {/* Always render the action buttons for debugging */}
+          <Button
+            onClick={handleUndo}
+            disabled={currentHistoryIndex <= 0}
+            variant="outline"
+            className="bg-gray-700 border-white/30 text-white shadow"
+          >
+            <Undo className="w-4 h-4 mr-2" />
+            Undo
+          </Button>
 
-              <Button
-                onClick={handleRedo}
-                disabled={currentHistoryIndex >= history.length - 1}
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:hover:scale-100"
-              >
-                <Redo className="w-4 h-4 mr-2" />
-                Redo
-              </Button>
+          <Button
+            onClick={handleRedo}
+            disabled={currentHistoryIndex >= history.length - 1}
+            variant="outline"
+            className="bg-gray-700 border-white/30 text-white shadow"
+          >
+            <Redo className="w-4 h-4 mr-2" />
+            Redo
+          </Button>
 
-              <Button
-                onClick={handleReset}
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 transform hover:scale-105 transition-all duration-200"
-              >
-                <RotateCcw className="w-4 h-4 mr-2" />
-                Reset
-              </Button>
+          <Button
+            onClick={handleReset}
+            variant="outline"
+            className="bg-gray-700 border-white/30 text-white shadow"
+          >
+            <RotateCcw className="w-4 h-4 mr-2" />
+            Reset
+          </Button>
 
-              <Button
-                onClick={handleDownload}
-                data-download-btn
-                className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl animate-pulse"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Save Image
-              </Button>
-            </>
-          )}
+          <Button
+            onClick={handleDownload}
+            data-download-btn
+            className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 shadow-lg"
+          >
+            <Download className="w-4 h-4 mr-2" />
+            Save Image
+          </Button>
         </div>
       </Card>
 
