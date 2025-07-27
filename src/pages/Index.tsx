@@ -10,7 +10,7 @@ const Index = () => {
       <div className="relative z-10 container mx-auto px-4 py-8">
         <div className="text-center mb-8 animate-fade-in">
           <div className="mb-6">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 bg-gradient-to-r from-pink-400 via-purple-300 to-cyan-300 bg-clip-text text-transparent animate-pulse">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 bg-gradient-to-r from-pink-400 via-purple-300 to-cyan-300 bg-clip-text text-transparent">
               Vizage
             </h1>
             <div className="w-24 h-1 bg-gradient-to-r from-pink-400 to-purple-300 mx-auto rounded-full animate-scale-in"></div>
@@ -19,9 +19,9 @@ const Index = () => {
             Transform your images with professional filters, effects, and real-time processing tools
           </p>
           <div className="flex justify-center gap-2 mt-4 animate-fade-in delay-500">
-            <span className="inline-block w-2 h-2 bg-pink-400 rounded-full animate-bounce"></span>
-            <span className="inline-block w-2 h-2 bg-purple-400 rounded-full animate-bounce delay-100"></span>
-            <span className="inline-block w-2 h-2 bg-cyan-400 rounded-full animate-bounce delay-200"></span>
+            <span className="inline-block w-2 h-2 bg-pink-400 rounded-full"></span>
+            <span className="inline-block w-2 h-2 bg-purple-400 rounded-full delay-100"></span>
+            <span className="inline-block w-2 h-2 bg-cyan-400 rounded-full delay-200"></span>
           </div>
         </div>
         
